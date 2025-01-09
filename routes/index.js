@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const controller = require('../controllers/Url-controler');
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express' });
-});
+// home page
+router.get('/', controller.get_home);
+
+router.post('/', controller.add_url);
 
 module.exports = router;
